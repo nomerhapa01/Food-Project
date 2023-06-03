@@ -6,8 +6,6 @@ const useFetch = (queryTerm) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log(queryTerm);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -19,7 +17,6 @@ const useFetch = (queryTerm) => {
         }
         const data = await response.json();
         setRecipes(data.hits);
-        // setRecipes(data);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -28,7 +25,7 @@ const useFetch = (queryTerm) => {
     };
 
     fetchData();
-  }, []);
+  }, [queryTerm]);
 
   return { recipes, loading, error };
 };

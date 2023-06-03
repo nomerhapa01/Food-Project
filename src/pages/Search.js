@@ -49,14 +49,12 @@ export const Search = () => {
                   <p className="text-gray-500 poppins text-sm text-center">
                     Cuisine Type : {recipe.recipe.cuisineType}
                   </p>
-                  {/* <h4 className="text-gray-900 poppins font-bold">
-                  Cook Time: {recipe.recipe.totalTime}
-                </h4> */}
+
                   <button className="bg-primary text-white px-8 py-2 focus:outline-none poppins rounded-full mt-24 transform transition duration-300 hover:scale-105">
                     <Link
-                      to={`tutorial/recipe_${recipe.recipe.uri.split("_")[1]}`}
+                      to={`/food-detail/${recipe.recipe.uri.split("_")[1]}`}
                     >
-                      Try It{" "}
+                      Try It
                     </Link>
                   </button>
                 </div>

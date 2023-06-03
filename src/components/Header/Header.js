@@ -1,19 +1,19 @@
 import { useState } from "react";
-import useFetch from "../../hooks/useFetch";
+// import useFetch from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [inputValue, setInputValue] = useState("");
-  const { recipes, loading, error } = useFetch(inputValue);
+  // const { recipes, loading, error } = useFetch(inputValue);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setInputValue("");
-  };
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   setInputValue();
+  // };
 
   return (
     <section className="header-banner h-96 w-full bg-yellow-50">
@@ -26,7 +26,7 @@ export const Header = () => {
           <input
             type="text"
             className="rounded-full px-4 focus:outline-none w-full bg-transparent"
-            onSubmit={handleFormSubmit}
+            // onSubmit={handleFormSubmit}
             placeholder="Search here"
             onChange={handleInputChange}
             value={inputValue}

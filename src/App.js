@@ -1,9 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./screens/Home";
-import { Tutorial } from "./screens/Tutorial";
-import { ErrorMessage } from "./components/ErrorMessage";
-import { Search } from "./screens/Search";
+import { Home } from "./pages/Home";
+import { Tutorial } from "./pages/Tutorial";
+import { ErrorMessage } from "./pages/ErrorMessage";
+import { Search } from "./pages/Search";
+import { FoodDetail } from "./pages/FoodDetail";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="tutorial/:id" element={<Tutorial />} />
-          <Route path="*" element={<ErrorMessage />} />
+          <Route path="/food-detail/:id" element={<FoodDetail />} />
           <Route path="/search/:queryTerm" element={<Search />} />
+          <Route path="*" element={<ErrorMessage />} />
         </Routes>
       </BrowserRouter>
     </>
